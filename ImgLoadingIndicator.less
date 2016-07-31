@@ -1,0 +1,103 @@
+.container-circular-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
+  color: #FFF;
+}
+
+.container-loader-percent {
+  height: 100%;
+  text-align: center;
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .loader-percent__text {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    color: #D93333;
+  }
+
+}
+
+.circle {
+  margin-left: -5px;
+  margin-top: -5px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-color: #D93333;
+  border-radius: 9px;
+  animation-direction: normal;
+  -o-animation-direction: normal;
+  -ms-animation-direction: normal;
+  -webkit-animation-direction: normal;
+  -moz-animation-direction: normal;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+}
+
+@length: 8;
+.while (@index) when (@index < @length) {
+  .circle-index-@{index} {
+    animation-name: circular-scale;
+    animation-delay: ~'.@{index}s';
+  }
+  .while(@index + 1);
+}
+
+.while (0);
+
+
+.circle-index-0 {
+  top: 0;
+  left: 20px;
+}
+.circle-index-1 {
+  top: 5.5px;
+  left: 35px;
+}
+.circle-index-2 {
+  top: 20.5px;
+  left: 41px;
+}
+.circle-index-3 {
+  top: 35px;
+  left: 35px;
+}
+.circle-index-4 {
+  top: 41px;
+  left: 20px;
+}
+.circle-index-5 {
+   top: 35px;
+   left: 6px;
+}
+.circle-index-6 {
+  top: 20.5px;
+  left: 0;
+}
+.circle-index-7 {
+  top: 5.5px;
+  left: 5px;
+}
+
+@keyframes circular-scale {
+  0%, 60%, 100% {
+    -webkit-transform: scale(0);  transform: scale(0);
+  }
+  10%, 50% {
+    -webkit-transform: scale(1);  transform: scale(1);
+  }
+}
