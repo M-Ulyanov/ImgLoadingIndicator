@@ -4,7 +4,7 @@
  *
  * By Max Ulyanov
  * Source: https://github.com/M-Ulyanov/ImgLoadingIndicator
- * Example http://m-ulyanov.github.io/ImgLoadingIndicator/
+ * Example https://m-ulyanov.github.io/ImgLoadingIndicator/
  */
 
 
