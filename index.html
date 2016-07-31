@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Loading Indicator</title>
+  <script src="ImgLoadingIndicator.js"></script>
+  <link rel="stylesheet" href="ImgLoadingIndicator.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background: #D8E6E7;
+      margin: 0;
+      padding: 0;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .example-container {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    .b-title {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 10px;
+      text-decoration: none;
+      background: #3FB082;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+    }
+    .b-galley-item {
+      margin-bottom: 10px;
+      height: 390px;
+      overflow: hidden;
+      background: #F9FDFF;
+      border-radius: 3px;
+    }
+    .grid-row {
+      margin-right: -5px;
+      margin-left: -5px;
+      clear: both
+    }
+
+    .grid-row:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0
+    }
+
+    .grid-padding {
+      padding: 0 5px
+    }
+    .grid-left {
+      float: left;
+    }
+    .grid-column-4 {
+      width: 33.33333333%
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="example-container">
+  <a href="https://github.com/M-Ulyanov/ImgLoadingIndicator" class="b-title">
+    Loading indicator for large images
+  </a>
+  <div class="grid-row">
+    <div class="grid-column-4 grid-padding grid-left">
+      <div class="b-galley-item">
+        <img class="js-gallery-item" src="" data-image-loading-url="http://placekitten.com/g/2000/2000" alt="">
+      </div>
+    </div>
+    <div class="grid-column-4 grid-padding grid-left">
+      <div class="b-galley-item">
+        <img class="js-gallery-item" src="" data-image-loading-url="http://placekitten.com/g/2000/2001" alt="">
+      </div>
+    </div>
+    <div class="grid-column-4 grid-padding grid-left">
+      <div class="b-galley-item">
+        <img class="js-gallery-item" src="" data-image-loading-url="http://placekitten.com/g/2000/2002" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="grid-column-4 grid-padding grid-left">
+      <div class="b-galley-item">
+        <img class="js-gallery-item" src="" data-image-loading-url="http://placekitten.com/g/2000/2003" alt="">
+      </div>
+    </div>
+    <div class="grid-column-4 grid-padding grid-left">
+      <div class="b-galley-item">
+        <img class="js-gallery-item" src="" data-image-loading-url="http://placekitten.com/g/2000/2005" alt="">
+      </div>
+    </div>
+    <div class="grid-column-4 grid-padding grid-left">
+      <div class="b-galley-item">
+        <img class="js-gallery-item" src="" data-image-loading-url="http://placekitten.com/g/2000/1991" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+
+  (function() {
+
+    var images = document.querySelectorAll('.js-gallery-item');
+    for (var i = 0; i < images.length; i++) {
+      var image = images[i];
+
+      new ImgLoadingIndicator({
+        image: image,
+        showLoadPercent: true,
+        callbacks: {
+          complete: function(event) {
+            console.log(event);
+          },
+          progress: function(event) {
+//            console.info(event)
+          },
+          error: function(event) {
+            console.error(event)
+          },
+        }
+      });
+
+    }
+
+  })();
+
+
+
+</script>
+</body>
+</html>
