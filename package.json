@@ -1,0 +1,19 @@
+{
+  "name": "img-loading-indicator",
+  "version": "0.1.0",
+  "description": "Loading indicator for large images based on XMLHttpRequest",
+  "main": "ImgLoadingIndicator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-Ulyanov/ImgLoadingIndicator.git"
+  },
+  "author": "m.ulyanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/M-Ulyanov/ImgLoadingIndicator/issues"
+  },
+  "homepage": "https://github.com/M-Ulyanov/ImgLoadingIndicator#readme"
+}
