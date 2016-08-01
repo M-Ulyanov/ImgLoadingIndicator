@@ -1,6 +1,6 @@
 /*
  * ImgLoadingIndicator:
- * 0.1
+ * 0.1.1
  *
  * By Max Ulyanov
  * Source: https://github.com/M-Ulyanov/ImgLoadingIndicator
@@ -46,8 +46,11 @@
         request.onload = this._onComplete.bind(this);
         request.onerror = this._onError.bind(this);
 
+        if(this.url.indexOf('http') === -1) {
+            this.url = window.location.protocol + this.url;
+        }
+
         request.open('GET', this.url, true);
-        request.overrideMimeType('text/plain; charset=x-user-defined');
         request.send(null);
     };
 
