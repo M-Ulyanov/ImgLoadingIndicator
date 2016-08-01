@@ -47,7 +47,7 @@
         request.onerror = this._onError.bind(this);
 
         if(this.url.indexOf('http') === -1) {
-            this.url = window.location.protocol + this.url;
+            this.url = window.location.protocol + '//' + this.url;
         }
 
         request.open('GET', this.url, true);
